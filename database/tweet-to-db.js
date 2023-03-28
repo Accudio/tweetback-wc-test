@@ -27,11 +27,9 @@ function checkInDatabase(tweet) {
 function saveToDatabaseApiV1( tweet ) {
   const API_VERSION = 1;
 
-  db.parallelize(function() {
-    let stmt = db.prepare("INSERT OR IGNORE INTO tweets VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    stmt.run(tweet.id_str, getDateString(tweet.created_at), tweet.in_reply_to_status_id_str, tweet.in_reply_to_screen_name, tweet.full_text, JSON.stringify(tweet), API_VERSION, "");
-    stmt.finalize();
-  });
+  let stmt = db.prepare("INSERT OR IGNORE INTO tweets VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+  stmt.run(tweet.id_str, getDateString(tweet.created_at), tweet.in_reply_to_status_id_str, tweet.in_reply_to_screen_name, tweet.full_text, JSON.stringify(tweet), API_VERSION, "");
+  stmt.finalize();
 }
 
 function saveToDatabase( tweet, users, mediaObjects ) {
