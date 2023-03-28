@@ -31,8 +31,8 @@ async function retrieveTweets() {
 				missingTweets++;
 				saveToDatabaseApiV1(tweet);
 				// console.log( "Missing tweet", { tweet });
-				console.log( {existingRecordsFound, missingTweets} );
-				logTweetCount();
+				//console.log( {existingRecordsFound, missingTweets} );
+				//logTweetCount();
 			}
 		});
 	}
