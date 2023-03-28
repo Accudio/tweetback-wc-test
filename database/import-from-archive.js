@@ -9,7 +9,7 @@ if (shouldFilterOutCircleTweets) {
 }
 
 console.log( `${tweets.length} tweets found in archive.` );
-logTweetCount();
+// logTweetCount();
 
 function tweetIsForCircles(tweet) {
 	return circleTweets.some(circleTweet => circleTweet.tweet.id_str === tweet.id_str);
